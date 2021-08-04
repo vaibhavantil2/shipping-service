@@ -18,7 +18,6 @@ class PaymentMethodType implements Serializable {
     Boolean active = Boolean.TRUE
 
     PaymentMethodTypeCode paymentMethodTypeCode
-
     // Audit fields
     Date dateCreated
     Date lastUpdated
@@ -31,6 +30,19 @@ class PaymentMethodType implements Serializable {
         name(nullable: false)
         description(nullable: true)
         paymentMethodTypeCode(nullable: false)
+    }
+    
+    
+    ReturnPaymentMethodTypeCode returnProductPaymentTypeCode
+    
+    static returnMapping = {
+        id generator: 'uuid'
+    }
+
+    static returnConstraints = {
+        name(nullable: false)
+        description(nullable: true)
+        returnProductPaymentTypeCode(nullable: false)
     }
 }
 
