@@ -93,6 +93,10 @@ class InvoiceService {
                 if (shipmentNumbers.size() > 0) {
                     'in'("shipmentNumber", shipmentNumbers)
                 }
+                
+                if (shipping_address.size() > 0) {
+                    'in'("shipping_address", shippingAdress)
+                }
 
                 order {
                     eq("destinationParty", currentLocation.organization)
@@ -317,6 +321,7 @@ class InvoiceService {
         InvoiceItem invoiceItem = new InvoiceItem(
             budgetCode: candidate.budgetCode,
             product: candidate.productCode ? Product.findByProductCode(candidate.productCode) : null,
+            shippingAdrress: candidate.shippingAdrress || null,
             glAccount: candidate.glAccount,
             quantity: candidate.quantity,
             quantityUom: candidate.quantityUom,
