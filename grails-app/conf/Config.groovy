@@ -273,7 +273,6 @@ jqueryValidationUi {
     */
     StringConstraintsMap = [
             blank     : 'required', // inverse: blank=false, required=true
-            creditCard: 'creditcard',
             email     : 'email',
             inList    : 'inList',
             minSize   : 'minlength',
