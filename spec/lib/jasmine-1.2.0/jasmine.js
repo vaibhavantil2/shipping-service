@@ -1180,7 +1180,7 @@ jasmine.Matchers.matcherFn_ = function(matcherName, matcherFunction) {
           message = message[this.isNot ? 1 : 0];
         }
       } else {
-        var englishyPredicate = matcherName.replace(/[A-Z]/g, function(s) { return ' ' + s.toLowerCase(); });
+        var m = matcherName.replace(/[A-Z]/g, function(s) { return ' ' + s.toLowerCase(); });
         message = "Expected " + jasmine.pp(this.actual) + (this.isNot ? " not " : " ") + englishyPredicate;
         if (matcherArgs.length > 0) {
           for (var i = 0; i < matcherArgs.length; i++) {
