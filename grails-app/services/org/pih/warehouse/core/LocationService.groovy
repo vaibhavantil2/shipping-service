@@ -411,7 +411,6 @@ class LocationService {
 
             if (binLocations) {
                 binLocations.each {
-                    Location binLocation = Location.findByNameAndParentLocation(it.name, location)
                     if (!binLocation) {
                         binLocation = new Location()
                         binLocation.name = it.name
@@ -424,8 +423,7 @@ class LocationService {
                     }
 
                     if (it.zoneName) {
-                        Location zone = Location.findByNameAndParentLocation(it.zoneName, location)
-
+]
                         if (!zone) {
                             throw new ValidationException("Zone with name: ${it.zoneName} does not exist", binLocation.errors)
                         } else {
