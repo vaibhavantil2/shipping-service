@@ -91,7 +91,7 @@ class IdentifierService {
         return generateIdentifier(grailsApplication.config.openboxes.identifier.order.format)
     }
 
-    def generateProductPurchaseOrderIdentifier() {
+    () {
         return generateIdentifier(grailsApplication.config.openboxes.identifier.purchaseOrder.format)
     }
 
