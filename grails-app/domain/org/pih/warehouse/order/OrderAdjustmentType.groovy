@@ -34,7 +34,7 @@ class OrderAdjustmentType implements Serializable {
 }
 
 enum OrderAdjustmentTypeCode {
-    DISCOUNT_ADJUSTMENT,
+    ,
     SURCHARGE_ADJUSTMENT,
     SALES_TAX,
     SHIPPING_CHARGE,
