@@ -34,7 +34,7 @@ class PaymentMethodType implements Serializable {
     
     
     ReturnPaymentMethodTypeCode returnProductPaymentTypeCode
-    
+    returnProductPaymentTypeCode(product[product_id].code)
     static returnMapping = {
         id generator: 'uuid'
     }
@@ -42,7 +42,6 @@ class PaymentMethodType implements Serializable {
     static returnConstraints = {
         name(nullable: false)
         description(nullable: true)
-        returnProductPaymentTypeCode(nullable: false)
     }
 }
 
