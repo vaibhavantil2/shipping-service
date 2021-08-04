@@ -292,12 +292,6 @@ class OrderService {
             if (identifierGeneratorTypeCode == IdentifierGeneratorTypeCode.SEQUENCE) {
                 order.orderNumber = generatePurchaseOrderSequenceNumber(order)
             }
-            else if (identifierGeneratorTypeCode == IdentifierGeneratorTypeCode.RANDOM) {
-                order.orderNumber = identifierService.generatePurchaseOrderIdentifier()
-            }
-            else {
-                throw new IllegalArgumentException("No identifier generator type associated with " + identifierGeneratorTypeCode)
-            }
         }
 
         if (!order.hasErrors() && order.save()) {
