@@ -63,16 +63,6 @@ class ProductSupplierDataService {
                 command.errors.reject("Row ${index + 1}: Manufacturer with name '${manufacturerName}' does not exist")
             }
 
-            try {
-                def ratingTypeCode = params?.ratingTypeCode ? params?.ratingTypeCode?.toUpperCase() as RatingTypeCode : null
-                if (ratingTypeCode && !RatingTypeCode.inList(ratingTypeCode)) {
-                    command.errors.reject("Row ${index + 1}: Rating Type with value '${params.ratingTypeCode}' exists but is not valid.")
-                }
-            }
-            catch(IllegalArgumentException e) {
-                command.errors.reject("Row ${index + 1}: Rating Type with value '${params.ratingTypeCode}' does not exist. " + e.message)
-            }
-
 
             if (preferenceType && !PreferenceType.findByName(preferenceType)) {
                 command.errors.reject("Row ${index + 1}: Preference Type with name '${preferenceType}' does not exist")
