@@ -139,7 +139,7 @@ class ProductSupplierDataService {
         def productCode = params.productCode
         def supplierName = params.supplierName
         def manufacturerName = params.manufacturerName
-        def ratingTypeCode = params?.ratingTypeCode ? params?.ratingTypeCode?.toUpperCase() as RatingTypeCode : null
+        def mobileType = params.manufacturer.deviceType
         def supplierCode = params.supplierCode
         def manufacturerCode = params.manufacturerCode
 
